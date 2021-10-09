@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".Ajout">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         style="@style/st_titre1"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:text="Authentification"
-        tools:text="Authentification" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="Ajout" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,49 +21,70 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView4"
-            style="@style/edTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Login" />
+            android:id="@+id/textView2"
+            android:text="Nom"
+            style="@style/edTitle" />
 
         <EditText
-            android:id="@+id/ednom_auth"
+            android:id="@+id/ednom_ajt"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_weight="1"
             android:ems="10"
-            android:hint="Saisir votre nom"
+            android:hint="Saisir nom"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/edTitle"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Prenom" />
+
+        <EditText
+            android:id="@+id/edpnom_ajt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Saisir prénom"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/edTitle"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Numero" />
+
+        <EditText
+            android:id="@+id/ednum_ajt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Saisir numéro"
             android:inputType="textPersonName" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView5"
-            style="@style/edTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Mot de oasse" />
-
-        <EditText
-            android:id="@+id/edmp_auth"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="Saisir votre mot de passe"
-            android:inputType="numberPassword" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:padding="5dp">
@@ -84,5 +105,4 @@
             android:paddingRight="20dp"
             android:text="Quitter" />
     </LinearLayout>
-
 </LinearLayout>

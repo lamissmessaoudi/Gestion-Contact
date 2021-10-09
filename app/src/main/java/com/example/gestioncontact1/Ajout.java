@@ -9,20 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class Ajout extends AppCompatActivity implements View.OnClickListener {
 
-    EditText ednom , edmp;
+    EditText ednom , ednum , edpnom;
     Button btnval , btnQuit;
 
-
-    @Override //appel implicite par system
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ajout);
+
+        Intent x =  this.getIntent();
 
         //Réccuperation des composants
-        edmp = findViewById(R.id.edmp_auth) ;
-        ednom = findViewById(R.id.ednom_auth) ;
+        ednum = findViewById(R.id.ednum_ajt) ;
+        edpnom = findViewById(R.id.edpnom_ajt) ;
+        ednom = findViewById(R.id.ednom_ajt) ;
         btnval = findViewById(R.id.btnval_ajt) ;
         btnQuit = findViewById(R.id.btnquit_ajt) ;
 
@@ -30,26 +32,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //this => classe courante MainActivity that needs to implement View.OnClickListener inteface
         btnQuit.setOnClickListener(this);
         btnval.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
-        String nom= ednom.getText().toString();
-        String mdp= edmp.getText().toString();
+
+        if(v==btnval){
+            String nom= ednom.getText().toString();
+            String pnom= edpnom.getText().toString();
+            String num= ednum.getText().toString();
+            Contact c= new Contact(nom, pnom , num) ;
+            Accueil.data.add(c);
+            Toast.makeText(this, "Contact Ajouté avec succes ", Toast.LENGTH_SHORT).show();
+
+        }
         if(v==btnQuit){
             this.finish();
-        }
-        if(v==btnval) {
-            if (nom.equalsIgnoreCase("test") && mdp.equals("000")) {
-                Intent i = new Intent(this, Accueil.class);
-                //sending properties to another page
-                i.putExtra("user", nom);
-                startActivity(i);
-            } else {
-                Toast.makeText(this, "login non valide ", Toast.LENGTH_SHORT).show();
-                //this.finish();
-            }
         }
     }
 }

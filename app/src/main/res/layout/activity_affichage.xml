@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Affichage">
+
+  <TextView
+      android:id="@+id/textView6"
+      style="@style/st_titre1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:padding="30dp"
+      android:text="Affichage" />
+
+  <EditText
+      android:id="@+id/edrech_aff"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:ems="10"
+      android:hint="Barre de recherche"
+      android:inputType="textPersonName" />
+
+  <ListView
+      android:id="@+id/lv_aff"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:layout_weight="1" />
+</LinearLayout>
