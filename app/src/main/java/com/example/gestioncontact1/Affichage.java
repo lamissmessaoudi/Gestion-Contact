@@ -1,12 +1,16 @@
 package com.example.gestioncontact1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,7 +18,8 @@ import java.util.List;
 
 public class Affichage extends AppCompatActivity implements TextWatcher {
 
-    ListView lv ;
+    //ListView lv ;
+    RecyclerView rv ;
     EditText edrech;
 
     @Override
@@ -22,12 +27,19 @@ public class Affichage extends AppCompatActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_affichage);
 
-        lv = findViewById(R.id.lv_aff);
+       // lv = findViewById(R.id.lv_aff);
+        rv = findViewById(R.id.rv_aff);
         edrech = findViewById(R.id.edrech_aff) ;
         edrech.addTextChangedListener(this);
 
-        MyAdapter ad =  new MyAdapter(Affichage.this ,Accueil.data );
-        lv.setAdapter(ad);
+        //MyAdapter ad =  new MyAdapter(Affichage.this ,Accueil.data );
+       // lv.setAdapter(ad);
+        MyRecyclerContactAdapter ad = new MyRecyclerContactAdapter(this , Accueil.data);
+        //LinearLayoutManager manager= new LinearLayoutManager(this, LinearLayoutManager.VERTICAL , true);
+        GridLayoutManager manager= new GridLayoutManager(this, 1);
+        rv.setLayoutManager(manager);
+        rv.setAdapter(ad);
+
     }
 
     @Override
@@ -51,6 +63,6 @@ public class Affichage extends AppCompatActivity implements TextWatcher {
         }
 
         MyAdapter filter =  new MyAdapter(Affichage.this ,filtred );
-        lv.setAdapter(filter);
+        //lv.setAdapter(filter);
     }
 }

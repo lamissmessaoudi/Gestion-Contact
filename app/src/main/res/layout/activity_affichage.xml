@@ -11,22 +11,23 @@
       android:id="@+id/textView6"
       style="@style/st_titre1"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="0dp"
       android:layout_weight="1"
+      android:height="60dp"
       android:padding="30dp"
       android:text="Affichage" />
 
   <EditText
       android:id="@+id/edrech_aff"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="10dp"
       android:layout_weight="1"
       android:ems="10"
       android:hint="Barre de recherche"
       android:inputType="textPersonName" />
 
-  <ListView
-      android:id="@+id/lv_aff"
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rv_aff"
       android:layout_width="match_parent"
       android:layout_height="100dp"
       android:layout_weight="1" />

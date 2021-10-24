@@ -1,35 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvnom_vl"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#FFEB3B"
-        android:padding="2dp"
-        android:text="TextView"
-        android:textColor="#33691E" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvpnm_vl"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvnom_vl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFEB3B"
+            android:padding="2dp"
+            android:text="TextView"
+            android:textColor="#33691E" />
+
+        <TextView
+            android:id="@+id/tvpnm_vl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF9800"
+            android:padding="2dp"
+            android:text="TextView"
+            android:textColor="#4E342E" />
+
+        <TextView
+            android:id="@+id/tvnum_vl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF5722"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textColor="#212121" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#FF9800"
-        android:padding="2dp"
-        android:text="TextView"
-        android:textColor="#4E342E" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvnum_vl"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="#FF5722"
-        android:padding="5dp"
-        android:text="TextView"
-        android:textColor="#212121" />
+        <ImageButton
+            android:id="@+id/ib_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_edit"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/ib_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_delete"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/ib_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_call"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
 </LinearLayout>
